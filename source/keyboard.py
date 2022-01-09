@@ -5,15 +5,20 @@ import pygame
 
 pygame.mixer.init()  # initialise `init()` for mixer of pygame. 
 masterSound =[]
+print("""
+   _     _     _     _     _     _     _     _       _       _     _     _     _  
+  / \   / \   / \   / \   / \   / \   / \   / \     / \     / \   / \   / \   / \ 
+ ( K ) ( e ) ( y ) ( b ) ( o ) ( a ) ( r ) ( d )   ( A )   ( L ) ( i ) ( v ) ( e )
+  \_/   \_/   \_/   \_/   \_/   \_/   \_/   \_/     \_/     \_/   \_/   \_/   \_/ 
+""")
+print("adding sound track")
 for i in range(1, 206):
     masterSound.append(pygame.mixer.Sound("Nyan cat ({}).wav".format(i)))
-print("sound imported")
+print("sound track added")
 
 def on_press(key):
     global position
-    print('a')
     masterSound[position].play()
-    #winsound.PlaySound("Nyan Cat ({}).wav".format(position), winsound.SND_ASYNC)
     position += 1
     if(position >206):
         position=0
